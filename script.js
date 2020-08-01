@@ -635,6 +635,10 @@ function selectMonster(num) {
             monster_name = "Not-A-Block";
             $("#monstername").html(monster_name);
             $("#monsterdesc").html("A native of the Blocky Woods, this oblong has been ostracized all its life for its strange appearance.");
+        case 2:
+            monster_name = "Plot Bunny"
+            $("#monstername").html(monster_name);
+            $("#monsterdesc").html("Despite their friendly appearence, these bunnies are known for their man-eating diets.");
     }
 }
 
