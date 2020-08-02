@@ -32,6 +32,7 @@ var placeholder = "Hello, adventurer! Reach your word count goal to defeat the e
 date.setTime(date.getTime() + (999*24*60*60*1000));
 date = date.toUTCString();
 var current_fighter = "red";
+var current_monster = "not-a-block";
 $(document).ready(function()
 {
     $('.tooly').tooltipster({
@@ -158,11 +159,21 @@ $(document).ready(function()
             if (monster_hp > 0 && !paused) {
                 if (!animating) {
                     animating = true;
-                    $("#enemyimg").attr("src","img/1-2.gif");
+                    if (current_monster = "notablock"){
+                                        $("#enemyimg").attr("src","img/1-2.gif");
                     setTimeout ( function() {
                         $("#enemyimg").attr("src","img/1-1.gif");
                         animating = false;
-                    }, 1000 );
+                    } else if (current_monster = "plot_bunny"){  //NEED TO GET ANIMATION FOR PLOT BUNNY AND PUT IT HERE.
+                        $("#enemyimg").attr("src","img/preview/m2.png");
+                            setTimeout ( function() {
+                                $("#enemyimg").attr("src","img/preview/m2.png"); //this is literally pointless, but i need to do it anyway for future proofing. wow.
+                                
+                                animating = false;
+                            }   
+                    }
+                    }
+                    , 1000 );
                 }
                 user_hp -= monster_attack;
                 if (user_hp <= 0) {
