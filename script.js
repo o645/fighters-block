@@ -159,7 +159,7 @@ $(document).ready(function()
             if (monster_hp > 0 && !paused) {
                 if (!animating) {
                     animating = true;
-                    if (current_monster = "notablock"){
+                    if (current_monster = "not-a-block"){
                                         $("#enemyimg").attr("src","img/1-2.gif");
                     setTimeout ( function() {
                         $("#enemyimg").attr("src","img/1-1.gif");
@@ -171,6 +171,11 @@ $(document).ready(function()
                                 
                                 animating = false;
                             }   
+                    } else {
+                                                                                $("#enemyimg").attr("src","img/1-2.gif");
+                    setTimeout ( function() {
+                        $("#enemyimg").attr("src","img/1-1.gif");
+                        animating = false;
                     }
                     }
                     , 1000 );
@@ -646,11 +651,13 @@ function selectMonster(num) {
             monster_name = "Not-A-Block";
             $("#monstername").html(monster_name);
             $("#monsterdesc").html("A native of the Blocky Woods, this oblong has been ostracized all its life for its strange appearance.");
+            current_monster = "not-a-block";
             break;
         case 2:
             monster_name = "Plot Bunny"
             $("#monstername").html(monster_name);
             $("#monsterdesc").html("Despite their friendly appearence, these bunnies are known for their man-eating diets.");
+            current_monster = "plot_bunny";
             break;
     }
 }
